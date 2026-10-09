@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 type RequestStatus = "New" | "Follow-up" | "Booked";
 type RequestFilter = "All" | RequestStatus;
@@ -40,10 +41,10 @@ export default function AdminDashboard() {
   return (
     <div className="admin-shell">
       <aside className="admin-sidebar">
-        <a className="admin-brand" href="/" aria-label="Truth Skin Studio home">
+        <Link className="admin-brand" href="/" aria-label="Truth Skin Studio home">
           <span className="admin-brand-mark">t.</span>
           <span>truth<span className="admin-brand-subtitle">SKIN STUDIO</span></span>
-        </a>
+        </Link>
         <p className="admin-nav-label">WORKSPACE</p>
         <nav className="admin-nav" aria-label="Admin navigation">
           <a className="admin-nav-link active" href="#overview"><span className="admin-nav-dot" />Overview</a>
@@ -59,7 +60,7 @@ export default function AdminDashboard() {
       <main className="admin-main" id="overview">
         <header className="admin-topbar">
           <p>Workspace <span>/</span> Overview</p>
-          <a className="admin-public-link" href="/">View public site <span aria-hidden="true">↗</span></a>
+          <Link className="admin-public-link" href="/">View public site <span aria-hidden="true">↗</span></Link>
         </header>
 
         <div className="admin-content">
