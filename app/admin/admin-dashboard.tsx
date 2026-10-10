@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import AdminLogoutButton from "./admin-logout-button";
 
 type RequestStatus = "New" | "Follow-up" | "Booked";
 type RequestFilter = "All" | RequestStatus;
@@ -49,10 +50,11 @@ export default function AdminDashboard() {
         <nav className="admin-nav" aria-label="Admin navigation">
           <a className="admin-nav-link active" href="#overview"><span className="admin-nav-dot" />Overview</a>
           <a className="admin-nav-link" href="#requests"><span className="admin-nav-dot" />Consultations<span className="admin-nav-count">6</span></a>
+          <Link className="admin-nav-link" href="/admin/content"><span className="admin-nav-dot" />Website content</Link>
         </nav>
         <div className="admin-sidebar-bottom">
-          <span className="admin-avatar">TS</span>
-          <span className="admin-account"><strong>Studio team</strong><small>Administrator</small></span>
+          <span className="admin-avatar">SDG</span>
+          <span className="admin-account"><strong>SKINDRUG_GIST</strong><small>Administrator</small></span>
           <span className="admin-account-menu" aria-hidden="true">···</span>
         </div>
       </aside>
@@ -60,14 +62,17 @@ export default function AdminDashboard() {
       <main className="admin-main" id="overview">
         <header className="admin-topbar">
           <p>Workspace <span>/</span> Overview</p>
-          <Link className="admin-public-link" href="/">View public site <span aria-hidden="true">↗</span></Link>
+          <div className="admin-topbar-actions">
+            <Link className="admin-public-link" href="/">View public site <span aria-hidden="true">↗</span></Link>
+            <AdminLogoutButton />
+          </div>
         </header>
 
         <div className="admin-content">
           <div className="admin-page-heading">
             <div>
               <p className="admin-eyebrow">FRIDAY, OCTOBER 9</p>
-              <h1>Good morning, Studio team</h1>
+              <h1>Good morning, SDG team</h1>
               <p className="admin-subheading">Here’s the shape of your consultation desk.</p>
             </div>
             <span className="admin-preview-badge"><span />Preview data</span>
