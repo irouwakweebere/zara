@@ -3,7 +3,6 @@ import Link from "next/link";
 import { connection } from "next/server";
 import { defaultSiteContent } from "./lib/site-content-model";
 import { getSiteContent } from "./lib/site-content";
-
 function backgroundImage(url: string) {
   try {
     return `url("${new URL(url).href.replaceAll('"', "%22")}")`;
@@ -25,14 +24,17 @@ export default async function Home() {
     <>
       <header className="site-header" id="home">
         <a className="wordmark" href="#home" aria-label="Skindrug Gist">
-          {content.brand.headerFirst}<span>{content.brand.headerMiddle}</span>{content.brand.headerLast}
+          <span className="brand-skin">{content.brand.headerFirst}</span>
+          <span className="brand-drug">{content.brand.headerMiddle}</span>
+          <span className="brand-gist">{content.brand.headerLast.trimStart()}</span>
         </a>
         <nav className="main-nav" aria-label="Main navigation">
           <a className="active" href="#home">{content.brand.navHome}</a>
           <a href="#services">{content.brand.navServices}</a>
           <a href="#learn">{content.brand.navLearn}</a>
           <a href="#shop">{content.brand.navShop}</a>
-          <Link href="/admin">Dashboard</Link>
+          <Link href="/assessment" target="_blank" rel="noreferrer">Skin assessment</Link>
+          <Link href="./admin">Dashboard</Link>
         </nav>
         <ConsultationForm triggerClassName="header-cta" triggerLabel={content.brand.headerCtaText} />
       </header>
@@ -45,7 +47,7 @@ export default async function Home() {
             <p className="hero-description">{content.hero.description}</p>
             <div className="hero-actions">
               <ConsultationForm triggerClassName="primary-button" triggerLabel={content.hero.ctaText} />
-              <a className="text-link" href="#learn">{content.hero.secondaryCtaText} <span aria-hidden="true">↗</span></a>
+              <Link className="text-link" href="/assessment" target="_blank" rel="noreferrer">Take the skin assessment <span aria-hidden="true">↗</span></Link>
             </div>
             <div className="hero-proof">
               <div className="proof-avatars" aria-hidden="true"><span>J</span><span>M</span><span>A</span></div>
@@ -78,6 +80,15 @@ export default async function Home() {
                 <span className="service-detail">{service.detail}</span>
               </article>
             ))}
+          </div>
+        </section>
+
+        <section className="assessment-section" id="assessment">
+          <div className="assessment-launch">
+            <p className="eyebrow">A PERSONAL SKIN CONSULTATION</p>
+            <h2>Take the <em>skin assessment.</em></h2>
+            <p>Complete each section at your pace, then submit your consultation form at the end.</p>
+            <Link className="primary-button assessment-launch-button" href="/assessment" target="_blank" rel="noreferrer">Start skin assessment <span aria-hidden="true">↗</span></Link>
           </div>
         </section>
 
@@ -127,7 +138,7 @@ export default async function Home() {
       <footer className="site-footer">
         <a className="wordmark footer-wordmark" href="#home">{content.brand.footerFirst}<span>{content.brand.footerLast}</span></a>
         <p>{content.brand.footerTagline}</p>
-        <div className="footer-links"><a href="#services">{content.brand.navServices}</a><a href="#learn">{content.brand.navLearn}</a><a href="#shop">{content.brand.navShop}</a><a href={`mailto:${content.brand.contactEmail}`}>{content.brand.navContact}</a></div>
+        <div className="footer-links"><a href="#services">{content.brand.navServices}</a><Link href="/assessment" target="_blank" rel="noreferrer">Skin assessment</Link><a href="#learn">{content.brand.navLearn}</a><a href="#shop">{content.brand.navShop}</a><a href={`mailto:${content.brand.contactEmail}`}>{content.brand.navContact}</a></div>
         <span className="copyright">{content.brand.copyright}</span>
       </footer>
     </>

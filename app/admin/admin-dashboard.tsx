@@ -44,7 +44,7 @@ export default function AdminDashboard() {
       <aside className="admin-sidebar">
         <Link className="admin-brand" href="/" aria-label="Truth Skin Studio home">
           <span className="admin-brand-mark">t.</span>
-          <span>truth<span className="admin-brand-subtitle">SKIN STUDIO</span></span>
+          <span>SKIN<span className="admin-brand-subtitle">DRUG_GIST</span></span>
         </Link>
         <p className="admin-nav-label">WORKSPACE</p>
         <nav className="admin-nav" aria-label="Admin navigation">
@@ -151,7 +151,7 @@ export default function AdminDashboard() {
             <p className="admin-table-foot">Showing {filteredRequests.length} of {requests.length} sample requests</p>
           </section>
 
-          <footer className="admin-footer"><span>TRUTH SKIN STUDIO</span><span>Thoughtful skincare, one conversation at a time.</span></footer>
+          <footer className="admin-footer"><span>SKINDRUG_GIST</span><span>Thoughtful skincare, one conversation at a time.</span></footer>
         </div>
       </main>
 
