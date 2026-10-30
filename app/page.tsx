@@ -30,9 +30,9 @@ export default async function Home() {
           <a className="active" href="#home">{content.brand.navHome}</a>
           <a href="#services">{content.brand.navServices}</a>
           <a href="#learn">{content.brand.navLearn}</a>
-          <a href="#shop">{content.brand.navShop}</a>
+          <Link href="/shops">{content.brand.navShop}</Link>
           <Link href="/assessment" target="_blank" rel="noreferrer">Skin assessment</Link>
-          <Link href="./admin">Dashboard</Link>
+          <Link href="/vendors/login">Vendor portal</Link>
         </nav>
         <ConsultationForm triggerClassName="header-cta" triggerLabel={content.brand.headerCtaText} />
       </header>
@@ -121,7 +121,7 @@ export default async function Home() {
               </article>
             ))}
           </div>
-          <a className="text-link shop-link" href="#shop">{content.shop.linkText} <span aria-hidden="true">↗</span></a>
+          <Link className="text-link shop-link" href="/shops">{content.shop.linkText} <span aria-hidden="true">↗</span></Link>
         </section>
 
         <section className="closing-cta">
@@ -138,7 +138,7 @@ export default async function Home() {
           <img className="brand-logo brand-logo-footer" src="/brand-logo.svg" alt="Skindrug Gist" />
         </a>
         <p>{content.brand.footerTagline}</p>
-        <div className="footer-links"><a href="#services">{content.brand.navServices}</a><Link href="/assessment" target="_blank" rel="noreferrer">Skin assessment</Link><a href="#learn">{content.brand.navLearn}</a><a href="#shop">{content.brand.navShop}</a><a href={`mailto:${content.brand.contactEmail}`}>{content.brand.navContact}</a></div>
+        <div className="footer-links"><a href="#services">{content.brand.navServices}</a><Link href="/assessment" target="_blank" rel="noreferrer">Skin assessment</Link><a href="#learn">{content.brand.navLearn}</a><Link href="/shops">{content.brand.navShop}</Link><Link href="/vendors/apply">Become a vendor</Link><Link href="/vendors/login">Vendor login</Link><a href={`mailto:${content.brand.contactEmail}`}>{content.brand.navContact}</a></div>
         <span className="copyright">{content.brand.copyright}</span>
       </footer>
     </>

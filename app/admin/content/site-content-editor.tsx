@@ -118,6 +118,8 @@ export default function SiteContentEditor({ initialContent, storageConfigured, l
         <nav className="admin-nav" aria-label="Admin navigation">
           <Link className="admin-nav-link" href="/admin"><span className="admin-nav-dot" />Overview</Link>
           <a className="admin-nav-link" href="/admin#requests"><span className="admin-nav-dot" />Consultations</a>
+          <Link className="admin-nav-link" href="/admin/vendors"><span className="admin-nav-dot" />Vendor applications</Link>
+          <Link className="admin-nav-link" href="/admin/products"><span className="admin-nav-dot" />Product review</Link>
           <Link className="admin-nav-link active" href="/admin/content"><span className="admin-nav-dot" />Website content</Link>
         </nav>
       </aside>

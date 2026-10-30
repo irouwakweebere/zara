@@ -50,6 +50,8 @@ export default function AdminDashboard() {
         <nav className="admin-nav" aria-label="Admin navigation">
           <a className="admin-nav-link active" href="#overview"><span className="admin-nav-dot" />Overview</a>
           <a className="admin-nav-link" href="#requests"><span className="admin-nav-dot" />Consultations<span className="admin-nav-count">6</span></a>
+          <Link className="admin-nav-link" href="/admin/vendors"><span className="admin-nav-dot" />Vendor applications</Link>
+          <Link className="admin-nav-link" href="/admin/products"><span className="admin-nav-dot" />Product review</Link>
           <Link className="admin-nav-link" href="/admin/content"><span className="admin-nav-dot" />Website content</Link>
         </nav>
         <div className="admin-sidebar-bottom">

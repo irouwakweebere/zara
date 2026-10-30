@@ -32,6 +32,16 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Vendor Marketplace
+
+The shared public website has a vendor portal at `/vendors/login`, an application form at `/vendors/apply`, a public shop directory at `/shops`, and staff-only review pages at `/admin/vendors` and `/admin/products`. Vendors must verify their email and be approved by staff before they can manage inventory. New products and changes to product details require staff review; stock changes do not reset approval.
+
+To enable the marketplace, configure `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` for browser authentication, plus `SUPABASE_URL` and the server-only `SUPABASE_SERVICE_ROLE_KEY` for staff actions. Keep the service-role key out of `NEXT_PUBLIC_*`. Apply [`supabase-schema.sql`](supabase-schema.sql) in the Supabase SQL editor. In Supabase Auth, enable email confirmations and add `https://YOUR-DOMAIN/vendors/auth/callback` (and your local callback URL during development) to the allowed redirect URLs. Use the same values in the deployment environment and restart/redeploy after changes.
+
+Vendor application and product approvals are managed from the existing password-protected `/admin` workspace. Checkout remains intentionally disabled until Paystack split-payment configuration and the vendor settlement/commission policy are confirmed. Prescription-only products are outside this first marketplace release.
+
+The vendor schema has not been applied to the production Supabase project. Verify it in a non-production project before applying it to production.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
