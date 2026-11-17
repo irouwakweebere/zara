@@ -23,6 +23,10 @@ a { color: inherit; text-decoration: none; }
 button { color: inherit; }
 
 .site-header { height: 82px; padding: 0 6.2%; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #e9e7df; background: var(--paper); position: relative; z-index: 5; }
+.brand-logo-link { display: inline-flex; align-items: center; flex: 0 0 auto; }
+.brand-logo { display: block; width: 118px; height: 68px; object-fit: contain; }
+.brand-logo-header { width: 118px; height: 68px; }
+.brand-logo-footer { width: 120px; height: 70px; }
 .wordmark { display: inline-flex; flex-direction: column; font-family: var(--display); font-size: 32px; font-weight: 600; line-height: .7; letter-spacing: 0; }
 .wordmark span { margin-top: 8px; font-family: var(--sans); font-size: 8px; font-weight: 500; letter-spacing: 2.25px; text-transform: uppercase; text-align: right; }
 .wordmark .brand-skin, .wordmark .brand-gist { margin-top: 0; color: var(--terracotta); font-family: var(--display); font-size: inherit; font-weight: inherit; letter-spacing: inherit; line-height: inherit; text-align: left; text-transform: none; }

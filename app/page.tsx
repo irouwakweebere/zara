@@ -23,10 +23,8 @@ export default async function Home() {
   return (
     <>
       <header className="site-header" id="home">
-        <a className="wordmark" href="#home" aria-label="Skindrug Gist">
-          <span className="brand-skin">{content.brand.headerFirst}</span>
-          <span className="brand-drug">{content.brand.headerMiddle}</span>
-          <span className="brand-gist">{content.brand.headerLast.trimStart()}</span>
+        <a className="brand-logo-link" href="#home" aria-label="Skindrug Gist">
+          <img className="brand-logo brand-logo-header" src="/brand-logo.svg" alt="Skindrug Gist" />
         </a>
         <nav className="main-nav" aria-label="Main navigation">
           <a className="active" href="#home">{content.brand.navHome}</a>
@@ -136,7 +134,9 @@ export default async function Home() {
       </main>
 
       <footer className="site-footer">
-        <a className="wordmark footer-wordmark" href="#home">{content.brand.footerFirst}<span>{content.brand.footerLast}</span></a>
+        <a className="brand-logo-link footer-brand-logo-link" href="#home" aria-label="Skindrug Gist">
+          <img className="brand-logo brand-logo-footer" src="/brand-logo.svg" alt="Skindrug Gist" />
+        </a>
         <p>{content.brand.footerTagline}</p>
         <div className="footer-links"><a href="#services">{content.brand.navServices}</a><Link href="/assessment" target="_blank" rel="noreferrer">Skin assessment</Link><a href="#learn">{content.brand.navLearn}</a><a href="#shop">{content.brand.navShop}</a><a href={`mailto:${content.brand.contactEmail}`}>{content.brand.navContact}</a></div>
         <span className="copyright">{content.brand.copyright}</span>
